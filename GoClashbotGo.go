@@ -27,14 +27,13 @@ func main() {
 	//}
 	//fmt.Printf("%+v\n", player)
 
-	getClan("#9yu8pqgv")
+	response := getClan("#9yu8pqgv")
+	fmt.Printf("%s\n", response)
 }
 
 
-func getClan(tag string) {
+func getClan(tag string) (string) {
 	clan, _ := clash.GetClan(tag)
 
-	fmt.Printf("%+v\n", clan)
-
-	return clan, nil
+	return clan.Name
 }
