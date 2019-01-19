@@ -4,6 +4,7 @@ package main
 import(
   "fmt"
   "github.com/bwmarrin/discordgo"
+  "strings"
 )
 
 var(
@@ -53,6 +54,12 @@ func commandHandler(discord *discordgo.Session, message *discordgo.MessageCreate
   }
   if message.Content == "Ping"{
     discord.ChannelMessageSend(message.ChannelID, "Pong!")
+  }
+  if strings.Contains(message.Content, "!clan"){
+    var clan = strings.TrimPrefix(message.Content, "!clan ")
+
+    discord.ChannelMessageSend(message.ChannelID, ("Getting clan information for " + clan))
+    //getClan()
   }
   //content := message.Content
 
