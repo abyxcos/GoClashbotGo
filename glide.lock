@@ -1,0 +1,6 @@
+hash: 850761bf297eb8702f6b97a9aaf90b895b71d2761299828c1682d6aca5512fdd
+updated: 2019-01-19T12:48:35.581369-05:00
+imports:
+- name: github.com/ganino/goclash
+  version: 082f2c340388d81d22dcf66aa620a90d00dda3ee
+testImports: []
