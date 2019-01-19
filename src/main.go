@@ -51,6 +51,9 @@ func commandHandler(discord *discordgo.Session, message *discordgo.MessageCreate
     //do nothing because bot is talking
     return
   }
+  if message.Content == "Ping"{
+    discord.ChannelMessageSend(message.ChannelID, "Pong!")
+  }
   //content := message.Content
 
   fmt.Printf("Message: %+v || From: %s\n", message.Message, message.Author)
