@@ -5,6 +5,7 @@ import(
   "fmt"
   "github.com/bwmarrin/discordgo"
   "strings"
+  "stats"
 )
 
 var(
@@ -46,20 +47,21 @@ func errCheck(msg string, err error){
   }
 }
 
+//waits for the someone to tyoe something within the discord channel
 func commandHandler(discord *discordgo.Session, message *discordgo.MessageCreate){
   user := message.Author
   if user.ID == botID || user.Bot{
     //do nothing because bot is talking
     return
   }
-  if message.Content == "Ping"{
+  if message.Content == "!ping"{
     discord.ChannelMessageSend(message.ChannelID, "Pong!")
   }
   if strings.Contains(message.Content, "!clan"){
     var clan = strings.TrimPrefix(message.Content, "!clan ")
 
-    discord.ChannelMessageSend(message.ChannelID, ("Getting clan information for " + clan))
-    //getClan()
+    discord.ChannelMessageSend(message.ChannelID, ("Getting clan information for " + clan + "..."))
+    discord.ChannelMessageSend(message.ChannelID, getClanInfo(clan))
   }
   //content := message.Content
 
