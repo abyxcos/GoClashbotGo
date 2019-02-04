@@ -26,7 +26,7 @@ func startBot(){
       fmt.Println("Error attempting to set my status")
     }
     servers := discord.State.Guilds
-    fmt.Printf("GoClashbotGo has started on %d servers", len(servers))
+    fmt.Printf("GoClashbotGo has started on %d servers \n", len(servers))
   })
 
   err = discord.Open()
@@ -60,7 +60,7 @@ func commandHandler(discord *discordgo.Session, message *discordgo.MessageCreate
     var clan = strings.TrimPrefix(message.Content, "!clan ")
 
     discord.ChannelMessageSend(message.ChannelID, ("Getting clan information for " + clan + "..."))
-    discord.ChannelMessageSend(message.ChannelID, getClanInfo(clan))
+    discord.ChannelMessageSend(message.ChannelID, ("Clan name is " + getClan(clan)))
   }
   //content := message.Content
 

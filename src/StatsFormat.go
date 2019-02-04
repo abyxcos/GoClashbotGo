@@ -14,6 +14,6 @@ func getStats(user string){
 }
 
 //dummy function for formatting the information recieved from ClashAPI on the CLan
-func getClanInfo(clan string) (string){
-	return ("Clan name is " + getClan(clan))
-}
+// func getClanInfo(clan string) (string){
+// 	return ("Clan name is " + getClan(clan))
+// }
