@@ -5,7 +5,6 @@ import(
   "fmt"
   "github.com/bwmarrin/discordgo"
   "strings"
-  "stats"
 )
 
 var(
@@ -13,7 +12,7 @@ var(
   botID string
 )
 
-func main(){
+func startBot(){
   discord, err := discordgo.New("Bot NTM2MjMyODEyNzI3MTA3NjY0.DyTxsA.puWGzmgEpADoiAdExoBHnS2TNAA")
   errCheck("error creating discord session", err)
   user, err := discord.User("@me")

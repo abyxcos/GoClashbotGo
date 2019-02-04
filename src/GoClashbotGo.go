@@ -26,7 +26,8 @@ func main() {
 	//	fmt.Printf("Error: player not found: %s\n", err)
 	//}
 	//fmt.Printf("%+v\n", player)
-
+	startBot()
+	
 	response := getClan("#9yu8pqgv")
 	fmt.Printf("%s\n", response)
 }
