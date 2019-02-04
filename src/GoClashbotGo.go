@@ -4,7 +4,7 @@ import (
 	"io/ioutil"
 	"fmt"
 	"strings"
-
+	"strconv"
 	"github.com/ganino/goclash"
 )
 
@@ -36,5 +36,6 @@ func main() {
 func getClan(tag string) (string) {
 	clan, _ := clash.GetClan(tag)
 
-	return clan.Name
+	return clan.Name + 
+	"\nNumber of Members: " + strconv.Itoa(clan.Members)
 }
