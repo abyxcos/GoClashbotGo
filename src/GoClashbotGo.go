@@ -37,5 +37,8 @@ func getClan(tag string) (string) {
 	clan, _ := clash.GetClan(tag)
 
 	return clan.Name + 
-	"\nNumber of Members: " + strconv.Itoa(clan.Members)
+	"\nMembers: " + strconv.Itoa(clan.Members) +
+	"\nLevel: " + strconv.Itoa(clan.ClanLevel) +
+	"\nPoints: " + strconv.Itoa(clan.ClanPoints) + 
+	"\nWar Frequency: " + clan.WarFrequency
 }

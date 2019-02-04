@@ -56,7 +56,7 @@ func commandHandler(discord *discordgo.Session, message *discordgo.MessageCreate
   if message.Content == "!ping"{
     discord.ChannelMessageSend(message.ChannelID, "Pong!")
   }
-  if strings.Contains(message.Content, "!clan"){
+  if strings.HasPrefix(message.Content, "!clan"){
     var clan = strings.TrimPrefix(message.Content, "!clan ")
 
     discord.ChannelMessageSend(message.ChannelID, ("Getting clan information for " + clan + "..."))
